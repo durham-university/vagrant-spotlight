@@ -6,3 +6,6 @@ apt-get -y install \
   libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev
 
 apt-get -y install openjdk-19-jre-headless
+
+# Install Subversion because it makes it easier to export the db/migrate folder
+apt-get -y install subversion

@@ -102,7 +102,7 @@ Vagrant.configure("2") do |config|
 #  config.vm.synced_folder "./schmit", "/opt/schmit"
 #  config.vm.synced_folder "./jobduct", "/opt/jobduct"
 #  config.vm.synced_folder "./testfiles", "/home/vagrant/testfiles"
-  config.vm.synced_folder "./bin", "/home/vagrant/bin"
+#  config.vm.synced_folder "./bin", "/home/vagrant/bin"
 
 
   # Provisioning

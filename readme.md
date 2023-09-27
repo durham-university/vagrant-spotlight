@@ -14,4 +14,16 @@ The virtual machine created by the Vagrantfile is called "spotlight-dev-vm" by d
 
 For the initial setup, just execute `vagrant up`.
 
-Once this has run you can get onto your server by running `vagrant ssh`.
+Once this has run you can get onto your server by running `vagrant ssh`. Then issue the following commands:
+```
+cd
+cd dur-spotlight
+solr_wrapper
+```
+Then start another terminal and `vagrant ssh` again. Then:
+```
+cd dur-spotlight
+rails server -b 0.0.0.0
+```
+
+You should now be able to [http://localhost:7000/](access Spotlight).
