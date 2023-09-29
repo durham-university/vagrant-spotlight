@@ -7,5 +7,11 @@ apt-get -y install \
 
 apt-get -y install openjdk-19-jre-headless
 
-# Install Subversion because it makes it easier to export the db/migrate folder
-apt-get -y install subversion
+apt-get -y install emacs nano
+
+# Download and compile latest redis
+cd /tmp
+wget http://download.redis.io/redis-stable.tar.gz
+tar xzf redis-stable.tar.gz
+cd redis-stable
+make && make install
