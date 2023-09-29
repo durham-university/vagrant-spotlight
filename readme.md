@@ -20,7 +20,13 @@ cd
 cd dur-spotlight
 solr_wrapper
 ```
-Then start another terminal and `vagrant ssh` again. Then:
+Then start another terminal and `vagrant ssh` again.
+
+First we need to edit a generated file which has a fault in it. This [issue in GitHub](https://github.com/projectblacklight/spotlight/issues/2896) gave us the clue to remove a line. Edit ./dur-spotlight/app/assets/config/manifest.js and remove the line that says `//=link application.js`
+
+There is also a line where "//=" appears part way through. Add a line break before the "//=".
+
+Then:
 ```
 cd dur-spotlight
 rails server -b 0.0.0.0
