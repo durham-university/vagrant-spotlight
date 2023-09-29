@@ -12,7 +12,7 @@ fi
 # Get missing db:migrate material
 cd
 if [ ! -e dur-spotlight/db/migrate/20140128155152_create_roles.rb ]; then
-    echo "Fetching missing db/migrate files
+    echo "Fetching missing db/migrate files"
     cd dur-spotlight
     svn export --force https://github.com/projectblacklight/spotlight/branches/main/db/migrate db/migrate
     rake db:migrate
