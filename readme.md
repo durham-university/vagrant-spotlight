@@ -32,4 +32,4 @@ cd dur-spotlight
 rails server -b 0.0.0.0
 ```
 
-You should now be able to (access Spotlight)[http://localhost:7000/].
+You should now be able to [access Spotlight](http://localhost:7000/).
