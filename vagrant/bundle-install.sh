@@ -4,7 +4,7 @@ echo "Start of bundle-install.sh"
 
 # Spotlight
 cd
-if [ ! -e dur-spotlight ]; then
+if [ ! -e dur-spotlight || ! -e dur-spotlight/app ]; then
     echo "Spotlight bundle install"
     SKIP_TRANSLATION=1 rails new dur-spotlight -m https://raw.githubusercontent.com/projectblacklight/spotlight/main/template.rb
     cd dur-spotlight
