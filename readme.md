@@ -32,10 +32,15 @@ cd dur-spotlight
 rails server -b 0.0.0.0
 ```
 
-You should now be able to [access Spotlight](http://localhost:7000/).
+You should now be able to [access Spotlight](http://localhost:7000/). Click to sign in, and then use the "Sign up" link under the login box to create your first user.
 
-## Problems
-1. Need Redis running. Latest update attempts to download and compile it. Not sure if that is best way. Ubuntu package was too old for Sidekiq.
-2. Need to add instructions as to how to run Redis once we have the right version.
-3. Need Sidekiq running, it appears. It complains about Redis being too old. Not sure how to run it in background.
-5. Can we set up a proxy to allow access to Solr?
+Start a third command prompt and `vagrant ssh` again. Start the Redis server:
+```
+redis-server
+```
+
+Start a fourth command prompt and `vagrant ssh` again. Start Sidekiq:
+```
+cd dur-spotlight
+bundle exec sidekiq
+```
