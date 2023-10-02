@@ -1,3 +1,6 @@
+# Make empty directory for the application
+FileUtils.mkdir_p './dur-spotlight'
+
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
@@ -95,15 +98,7 @@ Vagrant.configure("2") do |config|
     config.vm.synced_folder ".", "/vagrant", disabled:true
   end
   config.vm.synced_folder "./vagrant", "/vagrant"
-#  config.vm.synced_folder "./hilda", "/opt/hilda"
-#  config.vm.synced_folder "./trifle", "/opt/trifle"
-#  config.vm.synced_folder "./oubliette", "/opt/oubliette"
-#  config.vm.synced_folder "./durham_rails", "/opt/durham_rails"
-#  config.vm.synced_folder "./schmit", "/opt/schmit"
-#  config.vm.synced_folder "./jobduct", "/opt/jobduct"
-#  config.vm.synced_folder "./testfiles", "/home/vagrant/testfiles"
-#  config.vm.synced_folder "./bin", "/home/vagrant/bin"
-
+  config.vm.synced_folder "./dur-spotlight", "/home/vagrant/dur-spotlight"
 
   # Provisioning
   config.vm.provision "shell", path: "vagrant/root-provision.sh"
