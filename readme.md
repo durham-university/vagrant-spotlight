@@ -34,6 +34,7 @@ rails server -b 0.0.0.0
 
 You should now be able to [access Spotlight](http://localhost:7000/). Click to sign in, and then use the "Sign up" link under the login box to create your first user.
 
+(Omit this section now: Redis should start automatically.)
 Start a third command prompt and `vagrant ssh` again. Start the Redis server:
 ```
 redis-server
