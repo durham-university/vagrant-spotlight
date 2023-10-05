@@ -1,0 +1,16 @@
+[Unit]
+Description=Solr
+After=syslog.target
+
+[Service]
+#ExecStart=/home/vagrant/.asdf/shims/solr_wrapper
+RestartSec=10s
+Restart=on-success
+WorkingDirectory=/home/vagrant/dur-spotlight
+ExecStart=/bin/bash -c "source /home/vagrant/.asdf/asdf.sh && /home/vagrant/.asdf/shims/solr_wrapper"
+User=vagrant
+Group=vagrant
+UMask=0002
+
+[Install]
+WantedBy=multi-user.target
