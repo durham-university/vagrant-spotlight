@@ -18,6 +18,8 @@ make && make install
 
 # Copy service files
 cp /vagrant/lib/systemd/system/redis.service /lib/systemd/system/redis.service
+cp /vagrant/lib/systemd/system/sidekiq.service /lib/systemd/system/sidekiq.service
+cp /vagrant/lib/systemd/system/solr.service /lib/systemd/system/solr.service
 
 # Enable and start redis
 systemctl daemon-reload

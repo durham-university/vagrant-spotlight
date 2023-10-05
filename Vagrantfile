@@ -104,5 +104,6 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", path: "vagrant/root-provision.sh"
   config.vm.provision "shell", path: "vagrant/user-provision.sh", privileged: false
   config.vm.provision "shell", path: "vagrant/bundle-install.sh", privileged: false
+  config.vm.provision "shell", path: "vagrant/post-bundle-root-provision.sh"
 
 end
