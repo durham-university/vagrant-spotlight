@@ -14,32 +14,37 @@ The virtual machine created by the Vagrantfile is called "spotlight-dev-vm" by d
 
 For the initial setup, just execute `vagrant up`.
 
-Once this has run you can get onto your server by running `vagrant ssh`. Then issue the following commands:
-```
-cd
-cd dur-spotlight
-solr_wrapper
-```
-Then start another terminal and `vagrant ssh` again.
+Once this has run you can get onto your server by running `vagrant ssh`.
 
 First we need to edit a generated file which has a fault in it. This [issue in GitHub](https://github.com/projectblacklight/spotlight/issues/2896) gave us the clue to remove a line. Edit ./dur-spotlight/app/assets/config/manifest.js and remove the line that says `//=link application.js`
 
 There is also a line where "//=" appears part way through. Add a line break before the "//=".
 
-Then:
+Then issue the following commands:
 ```
-cd dur-spotlight
+cd ~/dur-spotlight
 rails server -b 0.0.0.0
 ```
 
 You should now be able to [access Spotlight](http://localhost:7000/). Click to sign in, and then use the "Sign up" link under the login box to create your first user.
 
-(Omit this section now: Redis should start automatically.)
+### Manual starting of background processes
+The scripts now should start the Redis server, Solr and Sidekiq automatically. This section records how to start them manually and run them in the foreground.
+
+(I have not yet tested the scripts fully, and it's possible Sidekiq may fail if it is run before the manual fixes to the manifest.js file above.)
+
+#### Solr
+Open a new command prompt and `vagrant ssh` to your box.
+```
+cd dur-spotlight
+solr_wrapper
+```
+#### Redis
 Start a third command prompt and `vagrant ssh` again. Start the Redis server:
 ```
 redis-server
 ```
-
+#### Sidekiq
 Start a fourth command prompt and `vagrant ssh` again. Start Sidekiq:
 ```
 cd dur-spotlight
