@@ -8,6 +8,7 @@ apt-get -y install \
 apt-get -y install openjdk-19-jre-headless
 
 apt-get -y install emacs nano
+apt-get -y upgrade
 
 # Download and compile latest redis
 cd /tmp
