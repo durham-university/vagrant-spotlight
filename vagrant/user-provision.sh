@@ -3,8 +3,8 @@
 #install prereqs
 
 #If we don't have RVM then install - Used for installing ruby & rails
-if ! [ -d /home/vagrant/.adsf ]; then
-    echo "installing ADSF"
+if ! [ -d /home/vagrant/.asdf ]; then
+    echo "installing ASDF"
     cd
     git clone https://github.com/excid3/asdf.git ~/.asdf
     echo '. "$HOME/.asdf/asdf.sh"' >> ~/.bashrc
